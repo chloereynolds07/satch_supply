@@ -21,3 +21,27 @@ CREATE TABLE contract(
 
     CONSTRAINT pk_contract PRIMARY KEY (contract_id)
 );
+
+CREATE TABLE employee(
+    employee_id TINYINT UNSIGNED AUTO_INCREMENT NOT NULL,
+    first_name VARCHAR(30),
+    last_name VARCHAR(40),
+    title VARCHAR(60),
+    emp_num MEDIUMINT,
+    dept_id TINYINT,
+    emp_tier TINYINT,
+    salary MEDIUMINT,
+    date_hired DATE,
+    emp_status TINYINT,
+
+    CONSTRAINT pk_employee PRIMARY KEY (employee_id)
+);
+
+CREATE TABLE transaction(
+    transaction_id TINYINT UNSIGNED AUTO_INCREMENT NOT NULL,
+    employee_id TINYINT,
+    products_sold TINYINT, 
+    amount FLOAT(3,2),
+    transaction_date DATETIME,
+    CONSTRAINT pk_transaction PRIMARY KEY (transaction_id)
+);
